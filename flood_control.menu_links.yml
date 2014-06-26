@@ -1,0 +1,4 @@
+flood_control.settings:
+  title: Flood control
+  description: 'Control flood control options for failed login attempts, contact forms, etc.'
+  route_name: flood_control.settings
