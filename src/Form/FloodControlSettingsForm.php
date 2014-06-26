@@ -122,6 +122,8 @@ class FloodControlSettingsForm extends ConfigFormBase
         '43200' => '43200',
         '86400' => '86400',
         );
+        
+    array_walk($options3, 'test_print');
    
    
     $form['login']['user_failed_login_user_window'] = array(
@@ -132,6 +134,11 @@ class FloodControlSettingsForm extends ConfigFormBase
   );
 
     return parent::buildForm($form, $form_state);
+  }
+
+  protected function test_print($item, $key)
+  {
+     $item =  \Drupal::service('date')->formatInterval($item);
   }
 
   public function submitForm(array &$form, array &$form_state)
