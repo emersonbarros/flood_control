@@ -15,6 +15,7 @@ class FloodControlSettingsForm extends ConfigFormBase
   public function buildForm(array $form, array &$form_state)
   {
     $flood_config = $this->config('user.flood');
+    $contatc_flood_config = $this->config('contact.settings');
 
     $form['login'] = array(
       '#type' => 'fieldset',
@@ -163,13 +164,13 @@ class FloodControlSettingsForm extends ConfigFormBase
       '500' => '500',
      );
 
-$form['contact']['contact_threshold_limit'] = array(
+  $form['contact']['contact_threshold_limit'] = array(
     '#type' => 'select',
     '#title' => t('Sending e-mails limit'),
     '#options' => $options4,
-    '#default_value' => $contatc_flood_config->get('contact_threshold_limit'),
+    '#default_value' => $contact_flood_config->get('flood.limit'),
   );
-
+  
     return parent::buildForm($form, $form_state);
   }
 
