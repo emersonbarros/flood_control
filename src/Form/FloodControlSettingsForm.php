@@ -6,6 +6,12 @@ use Drupal\Core\Form\ConfigFormBase;
 
 class FloodControlSettingsForm extends ConfigFormBase
 {
+ 
+  protected function test_print($item, $key)
+  {
+     $item =  \Drupal::service('date')->formatInterval($item);
+  }
+  
   public function getFormId()
   {
     return 'flood_control_admin_settings';
@@ -134,11 +140,6 @@ class FloodControlSettingsForm extends ConfigFormBase
   );
 
     return parent::buildForm($form, $form_state);
-  }
-
-  protected function test_print($item, $key)
-  {
-     $item =  \Drupal::service('date')->formatInterval($item);
   }
 
   public function submitForm(array &$form, array &$form_state)
