@@ -6,12 +6,7 @@ use Drupal\Core\Form\ConfigFormBase;
 
 class FloodControlSettingsForm extends ConfigFormBase
 {
- 
-  function testPrint($item, $key)
-  {
-     $item =  \Drupal::service('date')->formatInterval($item);
-  }
-  
+
   public function getFormId()
   {
     return 'flood_control_admin_settings';
@@ -129,8 +124,9 @@ class FloodControlSettingsForm extends ConfigFormBase
         '86400' => '86400',
         );
         
-        array_map('testPrint', $options3);
-   
+        foreach($_POST as $key => $value) {
+          $options3[$key] = \Drupal::service('date')->formatInterval($item);
+        }
    
     $form['login']['user_failed_login_user_window'] = array(
     '#type' => 'select',
