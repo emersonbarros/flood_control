@@ -129,7 +129,7 @@ class FloodControlSettingsForm extends ConfigFormBase
         '86400' => '86400',
         );
         
-    array_walk($options3, 'test_print');
+        array_map('test_print', $options3);
    
    
     $form['login']['user_failed_login_user_window'] = array(
