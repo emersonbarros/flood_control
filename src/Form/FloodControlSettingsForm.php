@@ -7,7 +7,7 @@ use Drupal\Core\Form\ConfigFormBase;
 class FloodControlSettingsForm extends ConfigFormBase
 {
  
-  function test_print($item, $key)
+  function testPrint($item, $key)
   {
      $item =  \Drupal::service('date')->formatInterval($item);
   }
@@ -129,7 +129,7 @@ class FloodControlSettingsForm extends ConfigFormBase
         '86400' => '86400',
         );
         
-        array_map('test_print', $options3);
+        array_map('testPrint', $options3);
    
    
     $form['login']['user_failed_login_user_window'] = array(
