@@ -106,6 +106,30 @@ class FloodControlSettingsForm extends ConfigFormBase
     '#default_value' => $flood_config->get('user_limit'),
     );
     
+     $options3 = array(
+ 	     	'0' => t('None (disabled)')
+        '60' => '60',
+        '180' => '180',
+        '300' => '300',
+        '600' => '600',
+        '900' => '900',
+        '1800' => '1800',
+        '2700' => '2700',
+        '3600' => '3600',
+        '10800' => '10800',
+        '21600' => '21600',
+        '32400' => '32400',
+        '43200' => '43200',
+        '86400' => '86400',
+        );
+   
+   
+    $form['login']['user_failed_login_user_window'] = array(
+    '#type' => 'select',
+    '#title' => t('Failed login (username) window'),
+    '#options' => $options3,
+    '#default_value' => $flood_config->get('user_window'),
+  );
 
     return parent::buildForm($form, $form_state);
   }
