@@ -7,7 +7,7 @@ use Drupal\Core\Form\ConfigFormBase;
 class FloodControlSettingsForm extends ConfigFormBase
 {
  
-  public function test_print($item, $key)
+  function test_print($item, $key)
   {
      $item =  \Drupal::service('date')->formatInterval($item);
   }
