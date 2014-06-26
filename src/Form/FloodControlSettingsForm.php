@@ -125,7 +125,7 @@ class FloodControlSettingsForm extends ConfigFormBase
         );
         
         foreach($options3 as $key => $value) {
-          $options3[$key] = \Drupal::service('date')->formatInterval($item);
+          $options3[$key] = \Drupal::service('date')->formatInterval($value);
         }
    
     $form['login']['user_failed_login_user_window'] = array(
