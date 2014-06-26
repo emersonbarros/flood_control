@@ -11,14 +11,14 @@ class FloodControlSettingsForm extends ConfigFormBase {
     }
 
     public function buildForm(array $form, array &$form_state) {
-      $config = $this->configFactory->get('user.flood');
+      //$config = $this->configFactory->get('user.flood');
 
       $elements = drupal_map_assoc(array('pre', 'code'));
 
       $form['flood_control_wrapping_element'] = array(
         '#type' => 'select',
         '#title' => $this->t('Select wrapping element'),
-        '#default_value' => $config->get('element'),
+        '#default_value' => 'A',
         '#options' => $elements,
       );
 
