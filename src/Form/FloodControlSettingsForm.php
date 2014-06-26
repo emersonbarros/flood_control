@@ -11,7 +11,8 @@ class FloodControlSettingsForm extends ConfigFormBase {
     }
 
     public function buildForm(array $form, array &$form_state) {
-      $flood_config = $this->configFactory->get('user.flood');
+      $flood_config = $this->config('user.flood');
+
 
  $form['login'] = array(
     '#type' => 'fieldset',
