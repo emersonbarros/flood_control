@@ -15,7 +15,7 @@ class FloodControlSettingsForm extends ConfigFormBase
   public function buildForm(array $form, array &$form_state)
   {
     $flood_config = $this->config('user.flood');
-    $contatc_flood_config = $this->config('contact.settings');
+    $contact_flood_config = $this->config('contact.settings');
 
     $form['login'] = array(
       '#type' => 'fieldset',
@@ -164,6 +164,11 @@ class FloodControlSettingsForm extends ConfigFormBase
       '500' => '500',
      );
 
+    $form['contact'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Contact Forms'),
+    );
+
   $form['contact']['contact_threshold_limit'] = array(
     '#type' => 'select',
     '#title' => t('Sending e-mails limit'),
@@ -177,7 +182,7 @@ class FloodControlSettingsForm extends ConfigFormBase
   public function submitForm(array &$form, array &$form_state)
   {
     $flood_config = $this->config('user.flood');
-    $contatc_flood_config = $this->config('contact.settings');
+    $contact_flood_config = $this->config('contact.settings');
     
     $flood_config->set('ip_limit', $form_state['values']['user_failed_login_ip_limit']);
     $flood_config->set('ip_window', $form_state['values']['user_failed_login_ip_window']);
@@ -185,8 +190,8 @@ class FloodControlSettingsForm extends ConfigFormBase
     $flood_config->set('user_window', $form_state['values']['user_failed_login_user_window']);
     $flood_config->set('user_window', $form_state['values']['user_failed_login_user_window']);
     
-    $contatc_flood_config->set('flood.limit', $form_state['values']['contact_threshold_limit']);
-    $contatc_flood_config->set('flood.interval', $form_state['values']['contact_threshold_window']);
+    $contact_flood_config->set('flood.limit', $form_state['values']['contact_threshold_limit']);
+    $contact_flood_config->set('flood.interval', $form_state['values']['contact_threshold_window']);
     
     $flood_config->save();
 
