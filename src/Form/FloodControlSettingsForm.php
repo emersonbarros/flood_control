@@ -13,15 +13,9 @@ class FloodControlSettingsForm extends ConfigFormBase {
     public function buildForm(array $form, array &$form_state) {
       //$config = $this->configFactory->get('user.flood');
 
-use Drupal\Component\Utility\MapArray;
-$options = MapArray::copyValuesToKeys($my_array);
-// With callback
-$options = MapArray::copyValuesToKeys($my_array, $callback);
-
  $form['login'] = array(
     '#type' => 'fieldset',
     '#title' => t('Login'),
-    '#access' => user_access('administer users'),
   );
   
   $options = array(
