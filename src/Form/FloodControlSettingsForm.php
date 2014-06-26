@@ -124,7 +124,7 @@ class FloodControlSettingsForm extends ConfigFormBase
         '86400' => '86400',
         );
         
-        foreach($_POST as $key => $value) {
+        foreach($options3 as $key => $value) {
           $options3[$key] = \Drupal::service('date')->formatInterval($item);
         }
    
