@@ -18,16 +18,14 @@ class FloodControlSettingsForm extends ConfigFormBase {
     '#title' => t('Login'),
   );
   
-  $options = array(
-      '1'  => t('1'),
-      '2' => t('2'),
-    );
+  $options = array('1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 75, 100, 125, 150, 200, 250, 500'
+  );
   
   $form['login']['user_failed_login_ip_limit'] = array(
     '#type' => 'select',
     '#title' => t('Failed login (IP) limit'),
     '#options' =>  $options,
-    '#default_value' => '2',
+    '#default_value' => '1',
   );
   
       $form['flood_control_wrapping_element'] = array(
