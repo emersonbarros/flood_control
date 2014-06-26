@@ -20,6 +20,15 @@ class FloodControlSettingsForm extends ConfigFormBase {
   );
   
   $options = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 75, 100, 125, 150, 200, 250, 500
+        '1' => '1',
+        '1' => '1',
+        '1' => '1',
+        '1' => '1',
+        '1' => '1',
+        '1' => '1',
+        '1' => '1',
+        '1' => '1',
+        
   );
   
   $form['login']['user_failed_login_ip_limit'] = array(
