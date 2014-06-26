@@ -62,9 +62,9 @@ class FloodControlSettingsForm extends ConfigFormBase
 
   public function submitForm(array &$form, array &$form_state)
   {
-    $this->config('flood_control.settings')
-      ->set('element', $form_state['values']['flood_control_wrapping_element'])
-      ->save();
+    $flood_config = $this->config('user.flood');
+    $flood_config->set('ip_limit', $form_state['login']['user_failed_login_ip_limit']);
+    $flood_config->save();
 
     parent::submitForm($form, $form_state);
   }
