@@ -1,0 +1,20 @@
+flood_control.config
+    pattern: '/admin/config/system/flood-control'
+    defaults:
+         # What's being returned is the entire response (not HTML, or even if HTML, we don't want additional blocks around it), so use _controller instead of _content.
+    _controller: '\Drupal\flood_control\FloodControlController::export'
+    requirements:
+        _permission: 'administer site configuration' # get correct name
+        
+        
+function flood_control_menu() {
+  $items['admin/config/system/flood-control'] = array(
+    'title' => 'Flood control',
+    'description' => 'Control flood control options for failed login attempts, contact forms, etc.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('flood_control_settings_form'),
+    'access arguments' => array('administer site configuration'),
+    'file' => 'flood_control.admin.inc',
+  );
+  return $items;
+}
