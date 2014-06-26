@@ -6,7 +6,7 @@
 function flood_control_menu() {
     $items['admin/config/system/flood-control'] = array(
     'title' => 'Flood control',
-    'description' => "Control flood control options for failed login attempts, contact forms, etc.",
+    'description' => 'Control flood control options for failed login attempts, contact forms, etc.',
     'route_name' => 'flood_control.settings',
   );
  

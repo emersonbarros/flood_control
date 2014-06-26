@@ -11,7 +11,7 @@ class FloodControlSettingsForm extends ConfigFormBase {
     }
 
     public function buildForm(array $form, array &$form_state) {
-      //$config = $this->configFactory->get('user.flood');
+      $flood_config = $this->configFactory->get('user.flood');
 
  $form['login'] = array(
     '#type' => 'fieldset',
@@ -25,7 +25,7 @@ class FloodControlSettingsForm extends ConfigFormBase {
     '#type' => 'select',
     '#title' => t('Failed login (IP) limit'),
     '#options' =>  $options,
-    '#default_value' => '1',
+    '#default_value' => $flood_config->get('ip_limit'),
   );
   
       $form['flood_control_wrapping_element'] = array(
