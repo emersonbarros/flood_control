@@ -129,6 +129,7 @@ class FloodControlSettingsForm extends ConfigFormBase {
         $contact_flood_config->set('flood.interval', $form_state['values']['contact_threshold_window']);
 
         $flood_config->save();
+        $contact_flood_config->save();
 
         parent::submitForm($form, $form_state);
     }
