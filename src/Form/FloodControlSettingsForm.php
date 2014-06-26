@@ -50,12 +50,62 @@ class FloodControlSettingsForm extends ConfigFormBase
       '#options' => $options,
       '#default_value' => $flood_config->get('ip_limit'),
     );
-
-    $form['flood_control_wrapping_element'] = array(
-      '#type' => 'select',
-      '#title' => $this->t('Select wrapping element'),
-      '#default_value' => 'A'
+    
+    $options1 = array(
+ 		    '0' => t('None (disabled)')
+        '60' => '60',
+        '180' => '180',
+        '300' => '300',
+        '600' => '600',
+        '900' => '900',
+        '1800' => '1800',
+        '2700' => '2700',
+        '3600' => '3600',
+        '10800' => '10800',
+        '21600' => '21600',
+        '32400' => '32400',
+        '43200' => '43200',
+        '86400' => '86400',
+        );
+ 
+ $form['login']['user_failed_login_ip_window'] = array(
+    '#type' => 'select',
+    '#title' => t('Failed login (IP) window'),
+    '#options' => $options1,
+    '#default_value' => $flood_config->get('ip_window'),
     );
+    
+     $options2 = array(
+        '1' => '1',
+        '2' => '2',
+        '3' => '3',
+        '4' => '4',
+        '5' => '5',
+        '6' => '6',
+        '7' => '7',
+        '8' => '8',
+        '9' => '9',
+        '10' => '10',
+        '20' => '20',
+        '30' => '30',
+        '40' => '40',
+        '50' => '50',
+        '75' => '75',
+        '100' => '100',
+        '125' => '125',
+        '150' => '150',
+        '200' => '200',
+        '250' => '250',
+        '500' => '500',
+  );
+
+ $form['login']['user_failed_login_user_limit'] = array(
+    '#type' => 'select',
+    '#title' => t('Failed login (username) limit'),
+    '#options' => $options2,
+    '#default_value' => $flood_config->get('user_limit'),
+    );
+    
 
     return parent::buildForm($form, $form_state);
   }
