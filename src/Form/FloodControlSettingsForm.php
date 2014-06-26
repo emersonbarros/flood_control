@@ -138,6 +138,37 @@ class FloodControlSettingsForm extends ConfigFormBase
     '#options' => $options3,
     '#default_value' => $flood_config->get('user_window'),
   );
+  
+  $options4 = array(
+	  '1' => '1',
+      '2' => '2',
+      '3' => '3',
+      '4' => '4',
+      '5' => '5',
+      '6' => '6',
+      '7' => '7',
+      '8' => '8',
+      '9' => '9',
+      '10' => '10',
+      '20' => '20',
+      '30' => '30',
+      '40' => '40',
+      '50' => '50',
+      '75' => '75',
+      '100' => '100',
+      '125' => '125',
+      '150' => '150',
+      '200' => '200',
+      '250' => '250',
+      '500' => '500',
+     );
+
+$form['contact']['contact_threshold_limit'] = array(
+    '#type' => 'select',
+    '#title' => t('Sending e-mails limit'),
+    '#options' => $options4,
+    '#default_value' => $contatc_flood_config->get('contact_threshold_limit'),
+  );
 
     return parent::buildForm($form, $form_state);
   }
