@@ -107,7 +107,7 @@ class FloodControlSettingsForm extends ConfigFormBase
     );
     
      $options3 = array(
- 	     	'0' => t('None (disabled)')
+ 	     	'0' => t('None (disabled)'),
         '60' => '60',
         '180' => '180',
         '300' => '300',
