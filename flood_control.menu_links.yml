@@ -1,4 +1,13 @@
 flood_control.settings:
-  title: Flood control
+  title: 'Flood control'
   description: 'Control flood control options for failed login attempts, contact forms, etc.'
+  parent: system.admin_structure
   route_name: flood_control.settings
+
+flood_control.admin:
+  title: 'Flood control'
+  description: 'Control flood control options for failed login attempts, contact forms, etc.'
+  parent: system.admin_config_development
+  route_name: flood_control.settings
+  weight: 100
+

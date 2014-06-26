@@ -5,4 +5,3 @@ package: Flood Control
 version: 8.0
 core: 8.x
 configure: action.admin
-#TODO co  nfigure : admin/config/system/flood-control
