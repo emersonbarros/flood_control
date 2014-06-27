@@ -4,4 +4,4 @@ description : "Interface for hidden flood control options."
 package: Flood Control
 version: 8.0
 core: 8.x
-configure: action.admin
+configure: flood_control.settings
